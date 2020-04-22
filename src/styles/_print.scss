@@ -1,0 +1,80 @@
+$_print-text-color: #999;
+$_black: #000;
+$_white: #fff;
+
+// Print
+// Inlined to avoid required HTTP connection: h5bp.com/r
+
+@media print {
+  * {
+    // sass-lint:disable no-important
+    background: transparent !important;
+    box-shadow: none !important;
+    color: $_black !important; // Black prints faster: h5bp.com/s
+    text-shadow: none !important;
+    // sass-lint:enable no-important
+  }
+
+  // sass-lint:disable force-pseudo-nesting
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  // sass-lint:disable no-qualifying-elements
+  a[href]::after {
+    content: ' (" attr(href) ")';
+  }
+
+  abbr[title]::after {
+    content: ' (" attr(title) ")';
+  }
+  // sass-lint:enable no-qualifying-elements
+
+  // Don't show links for images, or javascript/internal links
+  // sass-lint:disable no-qualifying-elements
+  .ir a::after,
+  a[href^="javascript:"]::after,
+  a[href^="#"]::after {
+    content: "";
+  }
+  // sass-lint:enable no-qualifying-elements
+  // sass-lint:enable force-pseudo-nesting
+
+  pre,
+  blockquote {
+    border: 1px solid $_print-text-color;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group; // h5bp.com/t
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    // sass-lint:disable no-important
+    max-width: 100% !important;
+    // sass-lint:enable no-important
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
