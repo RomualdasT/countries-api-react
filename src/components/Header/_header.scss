@@ -1,0 +1,14 @@
+@import "../../styles/base/dependencies";
+
+.header {
+  box-shadow: 0 8px 6px -6px black;
+  height: 80px;
+
+  &__content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+}

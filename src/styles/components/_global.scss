@@ -1,0 +1,28 @@
+@import "../base/dependencies";
+
+html {
+  height: 100%;
+  min-height: 100%;
+}
+
+#root {
+  height: inherit;
+}
+
+body {
+  color: $blue-light-mode;
+  font-size: 16px;
+  height: inherit;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+// Hide the overflow in IE.
+svg:not(:root) {
+  overflow: hidden;
+}
+
+.focus-trap {
+  outline: 0;
+}
